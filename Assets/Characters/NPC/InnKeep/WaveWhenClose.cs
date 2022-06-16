@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class WaveWhenClose : MonoBehaviour
 {
-
     Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = this.gameObject.GetComponent<Animator>();
+        anim = this.gameObject.GetComponent<Animator>();//aince trigger is attached to this person would be this object to aniate
     }
 
     // Update is called once per frame
@@ -19,16 +18,16 @@ public class WaveWhenClose : MonoBehaviour
         
     }
 
- 
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//add to perosn in which trigger is attached too
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("wave");
 
-            anim.SetTrigger("wave");//name of box collider to trigger
+            anim.SetTrigger("wave");
+
+            
         }
     }
 
-    // drag this file to the character to trigger effects
 }
